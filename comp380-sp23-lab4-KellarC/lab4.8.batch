@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH --job-name="8"
+#SBATCH --output="test.out"
+#SBATCH --partition=compute
+#SBATCH --ntasks=8
+#SBATCH --cpus-per-task=1
+#SBATCH --export=ALL
+#SBATCH -t 48:00:00
+
+$HOME/comp380/comp380-sp23-lab4-KellarC lab4
+
+srun -n 8 ./lab4 >> lab4.8.out
